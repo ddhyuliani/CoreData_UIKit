@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  CoreData Starter
 //
-//  Created by Local Administrator on 24/06/22.
+//  Created by Dian Dinihari on 24/06/22.
 //
 
 import UIKit
