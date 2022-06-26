@@ -58,8 +58,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="employeeAge" destination="zaZ-FN-BOg" id="6jm-LY-6Dr"/>
-                                            <outlet property="employeeName" destination="gK2-GK-Ybg" id="ric-es-IXK"/>
+                                            <outlet property="employeeAgeLabel" destination="zaZ-FN-BOg" id="6jm-LY-6Dr"/>
+                                            <outlet property="employeeNameLabel" destination="gK2-GK-Ybg" id="ric-es-IXK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,7 +77,7 @@
                     <navigationItem key="navigationItem" title="Employee" id="xRD-zW-Wb9">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="6v2-pg-mXE">
                             <connections>
-                                <action selector="addButton:" destination="BYZ-38-t0r" id="2vy-i7-fhi"/>
+                                <segue destination="S4X-mx-YMF" kind="show" id="mGb-V4-XR8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cDE-H4-4Zs">
-                                <rect key="frame" x="16" y="114" width="350" height="40"/>
+                                <rect key="frame" x="16" y="158" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DhF-CW-4vG"/>
                                     <constraint firstAttribute="width" constant="350" id="Vif-eh-6LG"/>
@@ -107,7 +107,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueX-aH-252">
-                                <rect key="frame" x="16" y="68" width="120" height="30"/>
+                                <rect key="frame" x="16" y="112" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="2aD-8l-LBb"/>
                                     <constraint firstAttribute="height" constant="30" id="cQo-lb-6TQ"/>
@@ -117,7 +117,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VsS-yt-XJL">
-                                <rect key="frame" x="16" y="224" width="350" height="40"/>
+                                <rect key="frame" x="16" y="268" width="350" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="MDe-eB-dPc"/>
                                     <constraint firstAttribute="height" constant="40" id="sME-8e-zGV"/>
@@ -126,7 +126,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsU-X1-Hpi">
-                                <rect key="frame" x="16" y="178" width="120" height="30"/>
+                                <rect key="frame" x="16" y="222" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ffo-ag-QaY"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="rry-IY-WXW"/>
@@ -135,6 +135,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfp-5n-TOm">
+                                <rect key="frame" x="120" y="332" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CDP-Ek-alp"/>
+                                    <constraint firstAttribute="width" constant="150" id="Npm-vn-YcO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="S4X-mx-YMF" eventType="touchUpInside" id="Zll-se-tm1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Q3-z6-Xcf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -142,15 +154,18 @@
                             <constraint firstItem="PsU-X1-Hpi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Q3-z6-Xcf" secondAttribute="leading" id="GOF-gs-GU0"/>
                             <constraint firstItem="cDE-H4-4Zs" firstAttribute="top" secondItem="ueX-aH-252" secondAttribute="bottom" constant="16" id="Kbi-Pm-f9q"/>
                             <constraint firstItem="ueX-aH-252" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Q3-z6-Xcf" secondAttribute="leading" id="Pu7-FE-IDp"/>
+                            <constraint firstItem="Lfp-5n-TOm" firstAttribute="top" secondItem="VsS-yt-XJL" secondAttribute="bottom" constant="24" id="S59-Re-srf"/>
                             <constraint firstItem="VsS-yt-XJL" firstAttribute="top" secondItem="PsU-X1-Hpi" secondAttribute="bottom" constant="16" id="XtB-by-TdI"/>
                             <constraint firstItem="cDE-H4-4Zs" firstAttribute="leading" secondItem="1Q3-z6-Xcf" secondAttribute="leading" constant="16" id="ZTD-FA-KC1"/>
                             <constraint firstItem="PsU-X1-Hpi" firstAttribute="top" secondItem="cDE-H4-4Zs" secondAttribute="bottom" constant="24" id="dM3-6P-frx"/>
+                            <constraint firstItem="Lfp-5n-TOm" firstAttribute="centerX" secondItem="9f0-Ca-DqF" secondAttribute="centerX" id="eCD-1D-BVA"/>
                             <constraint firstItem="ueX-aH-252" firstAttribute="top" secondItem="1Q3-z6-Xcf" secondAttribute="top" constant="24" id="hWl-UA-Far"/>
                             <constraint firstItem="1Q3-z6-Xcf" firstAttribute="trailing" secondItem="PsU-X1-Hpi" secondAttribute="trailing" constant="254" id="nsS-ep-ypj"/>
                             <constraint firstItem="1Q3-z6-Xcf" firstAttribute="trailing" secondItem="ueX-aH-252" secondAttribute="trailing" constant="254" id="omd-VE-uXQ"/>
                             <constraint firstItem="VsS-yt-XJL" firstAttribute="leading" secondItem="1Q3-z6-Xcf" secondAttribute="leading" constant="16" id="yXL-qg-Xex"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wpY-eW-Hxm"/>
                     <connections>
                         <outlet property="ageTextField" destination="VsS-yt-XJL" id="T1e-kB-k9k"/>
                         <outlet property="nameTextField" destination="cDE-H4-4Zs" id="1g3-6s-jKE"/>

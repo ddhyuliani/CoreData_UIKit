@@ -13,57 +13,25 @@ class AddEmployeeViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    //TODO: create context
     
-    var employeeData: [Employee] = []
+    //TODO: create variable to store Employee Object
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
 
-        self.view.backgroundColor = .white
-        navigationItem.title = "Add New Employee"
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveData))
-        
-        fetchEmployee()
     }
     
-    func fetchEmployee(){
-        
-        do {
-            self.employeeData = try context.fetch(Employee.fetchRequest())
-        }
-        catch {
-            
-        }
-    }
-    
-    @objc func dismissView(){
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @objc func saveData(){
+    @IBAction func saveButton(_ sender: Any) {
         
         //TODO: Create employee Object
-        let newEmployee = Employee(context: context)
-        newEmployee.name = nameTextField.text
-        newEmployee.age = ageTextField.text
         
         //TODO: Save the data
-        do {
-            try self.context.save()
-        }
-        catch {
-            
-        }
-
-        //re-fetch the data
-        self.fetchEmployee()
         
-        dismissView()
+        // when the save button pressed, it will pop back to the previous page
+        navigationController?.popViewController(animated: true)
     }
     
 }
