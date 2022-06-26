@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class AddEmployeeViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var employeeData: [Employee] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +26,18 @@ class AddEmployeeViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveData))
+        
+        fetchEmployee()
+    }
+    
+    func fetchEmployee(){
+        
+        do {
+            self.employeeData = try context.fetch(Employee.fetchRequest())
+        }
+        catch {
+            
+        }
     }
     
     @objc func dismissView(){
@@ -30,14 +47,21 @@ class AddEmployeeViewController: UIViewController {
     
     @objc func saveData(){
         
-        let textfieldName = nameTextField.text
-        let textfieldAge = ageTextField.text
-        
         //TODO: Create employee Object
+        let newEmployee = Employee(context: context)
+        newEmployee.name = nameTextField.text
+        newEmployee.age = ageTextField.text
         
         //TODO: Save the data
-        
-        //TODO: Re-fetch the data
+        do {
+            try self.context.save()
+        }
+        catch {
+            
+        }
+
+        //re-fetch the data
+        self.fetchEmployee()
         
         dismissView()
     }

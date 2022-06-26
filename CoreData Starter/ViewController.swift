@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var employeeTable: UITableView!
     
     //TODO: create context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var employeeData: [Employee] = []
     
     //TODO: create var data for the table
     
@@ -29,6 +33,16 @@ class ViewController: UIViewController {
     func fetchEmployee() {
         
         //TODO: fetch the data from the CoreData to display in the TableView
+        do {
+            self.employeeData = try context.fetch(Employee.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.employeeTable.reloadData()
+            }
+        }
+        catch {
+            
+        }
         
     }
     
@@ -88,7 +102,9 @@ extension ViewController: UITableViewDataSource {
         let cell = employeeTable.dequeueReusableCell(withIdentifier: "employeeCell") as! EmployeeTableViewCell
         
         //TODO: Get data from the array & set the label
-        
+        let employee = self.employeeData[indexPath.row]
+        cell.employeeName.text = employee.name
+        cell.employeeAge.text = employee.age
         
         return cell
     }
