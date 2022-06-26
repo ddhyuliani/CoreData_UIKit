@@ -35,6 +35,11 @@ class ViewController: UIViewController {
     
     @IBAction func addButton(_ sender: Any) {
         
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addEmployee") as! AddEmployeeViewController
+        
+        navigationController?.present(UINavigationController(rootViewController: vc), animated: true)
+        
+        /*
         // create Alert
         let alert = UIAlertController(title: "Add employee", message: "Input employee detail", preferredStyle: .alert)
         alert.addTextField { (nameTextField) in
@@ -66,6 +71,7 @@ class ViewController: UIViewController {
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
+         */
     }
 }
 

@@ -14,6 +14,7 @@
 		9B56B58A2864DD6B000A8D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B56B5892864DD6B000A8D7F /* Assets.xcassets */; };
 		9B56B58D2864DD6B000A8D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B56B58B2864DD6B000A8D7F /* LaunchScreen.storyboard */; };
 		9B56B5972864E0B3000A8D7F /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B56B5962864E0B3000A8D7F /* EmployeeTableViewCell.swift */; };
+		9B7BD20B28689B90005B4312 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BD20A28689B90005B4312 /* AddEmployeeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9B56B58C2864DD6B000A8D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B56B58E2864DD6B000A8D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B56B5962864E0B3000A8D7F /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		9B7BD20A28689B90005B4312 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				9B56B5802864DD6A000A8D7F /* AppDelegate.swift */,
 				9B56B5822864DD6A000A8D7F /* SceneDelegate.swift */,
 				9B56B5842864DD6A000A8D7F /* ViewController.swift */,
+				9B7BD20A28689B90005B4312 /* AddEmployeeViewController.swift */,
 				9B56B5862864DD6A000A8D7F /* Main.storyboard */,
 				9B56B5892864DD6B000A8D7F /* Assets.xcassets */,
 				9B56B58B2864DD6B000A8D7F /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 				9B56B5972864E0B3000A8D7F /* EmployeeTableViewCell.swift in Sources */,
 				9B56B5812864DD6A000A8D7F /* AppDelegate.swift in Sources */,
 				9B56B5832864DD6A000A8D7F /* SceneDelegate.swift in Sources */,
+				9B7BD20B28689B90005B4312 /* AddEmployeeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
