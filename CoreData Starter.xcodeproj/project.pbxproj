@@ -60,7 +60,6 @@
 		9B56B57F2864DD6A000A8D7F /* CoreData Starter */ = {
 			isa = PBXGroup;
 			children = (
-				9B56B5942864E08A000A8D7F /* Model */,
 				9B56B5952864E093000A8D7F /* Cell */,
 				9B56B5802864DD6A000A8D7F /* AppDelegate.swift */,
 				9B56B5822864DD6A000A8D7F /* SceneDelegate.swift */,
@@ -72,13 +71,6 @@
 				9B56B58E2864DD6B000A8D7F /* Info.plist */,
 			);
 			path = "CoreData Starter";
-			sourceTree = "<group>";
-		};
-		9B56B5942864E08A000A8D7F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		9B56B5952864E093000A8D7F /* Cell */ = {
